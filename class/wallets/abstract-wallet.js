@@ -148,7 +148,7 @@ export class AbstractWallet {
     if(m && m.length==3){
       let hexFingerprint = m[1].split("/")[0];
       if(hexFingerprint.length == 8){
-        hexFingerprint = Buffer.from(der[0], 'hex').reverse().toString('hex');
+        hexFingerprint = Buffer.from(hexFingerprint, 'hex').reverse().toString('hex');
         this.masterFingerprint = parseInt(hexFingerprint, 16);
       }
       this.secret = m[2];
